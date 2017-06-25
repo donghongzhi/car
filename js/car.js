@@ -1,0 +1,51 @@
+var app=angular.module("car",["ng","ngRoute"]);
+app.config(function($routeProvider){
+    $routeProvider
+        .when("/index",{
+            templateUrl:"tpl/index.html"
+        })
+        .when("/list",{
+            templateUrl:"tpl/list.html"
+        })
+        .when("/detail",{
+            templateUrl:"tpl/detail.html"
+        })
+        .when("/repair",{
+            templateUrl:"tpl/repair.html"
+        })
+        .when("/contact",{
+            templateUrl:"tpl/contact.html"
+        })
+        .when("/login",{
+            templateUrl:"tpl/login.html"
+        })
+        .when("/404",{
+            templateUrl:"tpl/404.html"
+        })
+        .otherwise({redirectTo:"/index"});
+});
+app.controller("parentCtrl",["$scope","$location",function($scope,$location){
+    // 页面跳转
+    $scope.jump=function(desjump){
+        $location.path(desjump);
+    };
+    //表单提交
+    $scope.handleSubmit=function(){
+        console.log($scope.user_name+":"+$scope.user_pwd);
+    };
+    $scope.indexSliderList=[
+        "2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg"
+    ];
+    $scope.indexList=[
+        {img:"pic1.jpg",name:"车1"},{img:"pic2.jpg",name:"车2"},{img:"pic3.jpg",name:"车3"},{img:"pic4.jpg",name:"车4"},
+        {img:"pic5.jpg",name:"车5"},{img:"pic6.jpg",name:"车6"},{img:"pic7.jpg",name:"车7"},{img:"pic8.jpg",name:"车8"}
+    ];
+    $scope.listList=[
+        "8.jpg","2.jpg","3.jpg"
+    ];
+    $scope.repairList=[
+        "r_pic1.jpg","r_pic2.jpg","r_pic3.jpg","r_pic4.jpg","r_pic5.jpg","r_pic6.jpg","r_pic7.jpg","r_pic8.jpg"
+    ];
+
+
+}]);

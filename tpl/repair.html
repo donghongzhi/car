@@ -1,0 +1,28 @@
+<div ng-include="'tpl/include/header.html'"></div>
+
+<div class="container">
+    <!--面板-->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2>Why Us Importance Of Repair</h2>
+            <!--缩略图-->
+            <div class="row">
+                <div class="col-sm-6 col-md-3" ng-repeat="list in repairList">
+                    <div class="thumbnail">
+                        <img ng-src="img/{{list}}">
+                        <div class="caption">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, animi at aut corporis debitis dolor dolorum ducimus enim excepturi labore.
+                            </p>
+                            <a href="#/detail" class="btn btn-danger">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div ng-include="'tpl/include/footer.html'"></div>

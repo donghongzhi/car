@@ -1,0 +1,33 @@
+<div ng-include="'tpl/include/header.html'"></div>
+
+<div class="container">
+    <!--面板-->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2>Why Us Importance Of Maintaince</h2>
+            <!--媒体对象列表-->
+            <ul class="media-list">
+                <!--一-->
+                <li class="media" ng-repeat="list in listList">
+                    <div class="media-left">
+                        <a href="#/detail">
+                            <img class="media-object" ng-src="img/{{list}}" width="300px">
+                        </a>
+                    </div>
+                    <div class="media-body media-middle">
+                        <h3 class="media-heading">Lorem Ipsum Is Simply Dummy Text </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur consequatur deleniti eius eligendi odit optio quis tempora tenetur vel? Commodi cum dolor dolores doloribus eligendi eos est in quam ut!
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur consequatur deleniti eius eligendi odit optio quis tempora tenetur vel? Commodi cum dolor dolores doloribus eligendi eos est in quam ut!
+                        </p>
+                        <button type="button" ng-click="jump('/detail')" class="btn btn-default navbar-btn btn-danger">了解更多</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+<div ng-include="'tpl/include/footer.html'"></div>

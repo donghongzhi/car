@@ -1,0 +1,53 @@
+<div ng-include="'tpl/include/header.html'"></div>
+
+<div class="container">
+    <!--左侧-->
+    <div class="row">
+        <div class="col-md-5">
+            <img src="img/pic5.jpg" width="90%" height="400px">
+            <div>
+                <h1>Company Information :</h1>
+                <ul class="list-unstyled">
+                    <li>500 Lorem Ipsum Dolor Sit</li>
+                    <li>22-56-2-9 Sit Amet, Lorem</li>
+                    <li>China</li>
+                    <li>Phone:188 7533 0000</li>
+                    <li>Fax: (000) 000 00 00 0</li>
+                    <li>Emai: <a href="">123@163.com</a></li>
+                    <li>Follow on:
+                        <a href="">微信</a>
+                        <a href="">QQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--右侧表单-->
+        <div class="col-md-7">
+            <h2>联系我们</h2>
+            <form name="form">
+                <div class="form-group">
+                    <label for="uname">姓名：</label>
+                    <input type="text" class="form-control" id="uname" name="uname"  placeholder="请输入姓名：" required autofocus >
+                </div>
+                <div class="form-group">
+                    <label for="ueamil">邮箱：</label>
+                    <input type="email" class="form-control" id="ueamil" name="uemail" placeholder="请正确输入邮箱" required >
+                </div>
+                <div class="form-group">
+                    <label for="uphone">手机：</label>
+                    <input type="tel" class="form-control" id="uphone" name="uphone" placeholder="请输入手机号码" required  maxlength="11"   pattern="1[3578]\d{9}">
+                </div>
+                <div class="form-group">
+                    <label for="subject">主题：</label>
+                    <textarea class="form-control" rows="3" id="subject" name="usubject" required ></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger active">提交</button>
+                    <button type="reset" class="btn btn-default ">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div ng-include="'tpl/include/footer.html'"></div>

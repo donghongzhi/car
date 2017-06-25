@@ -1,0 +1,52 @@
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="container">
+    <!--图片轮播-->
+    <div id="myCar" class="carousel slide" data-ride="carousel" data-interval="2000">
+        <div class="carousel-inner" >
+            <div class="item active">
+                <img src="img/1.jpg"  >
+            </div>
+            <div class="item" ng-repeat="list in indexSliderList">
+                <img ng-src="img/{{list}}"  >
+            </div>
+        </div>
+        <!--轮播小原点-->
+        <ol class="carousel-indicators">
+            <li data-target="#myCar" data-slide-to="0" class="active"></li>
+            <li data-target="#myCar" data-slide-to="1"></li>
+            <li data-target="#myCar" data-slide-to="2"></li>
+            <li data-target="#myCar" data-slide-to="3"></li>
+            <li data-target="#myCar" data-slide-to="4"></li>
+            <li data-target="#myCar" data-slide-to="5"></li>
+            <li data-target="#myCar" data-slide-to="6"></li>
+            <li data-target="#myCar" data-slide-to="7"></li>
+        </ol>
+        <!--轮播方向键-->
+        <a class="left carousel-control" href="#myCar" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" ></span>
+        </a>
+        <a class="right carousel-control" href="#myCar" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" ></span>
+        </a>
+    </div>
+
+    <!--面板-->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3 col-sm-6" ng-repeat="list in indexList">
+                    <div class="thumbnail">
+                        <a href="#/detail">
+                            <img ng-src="img/{{list.img}}">
+                        </a>
+                        <div class="caption">
+                            <h3 class="text-center">{{list.name}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>
+

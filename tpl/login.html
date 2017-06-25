@@ -1,0 +1,26 @@
+<div ng-include="'tpl/include/header.html'"></div>
+
+<div class="container" id="myLogin">
+    <form class="form-horizontal" name="form" ng-submit="handleSubmit()">
+        <div class="form-group">
+            <label class="col-xs-4 col-xs-offset-4">登录/注册</label>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-4 col-xs-offset-4">
+                <input type="text" class="form-control" placeholder="请输入用户名或邮箱" name="u_name" ng-model="user_name" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-4 col-xs-offset-4">
+                <input type="password" class="form-control" placeholder="请输入密码" name="u_pwd" ng-model="user_pwd" minlength="6" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-4 col-xs-offset-4">
+                <button type="submit" class="btn btn-danger">Continue</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div ng-include="'tpl/include/footer.html'"></div>
