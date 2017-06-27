@@ -1,10 +1,14 @@
-/*全局样式*/
+/**********全局样式*******/
 body{
     margin:50px 0;
     font:16px "microsoft yahei",Arial,Helvetica,sans-serif;
+    background-color: #eee;
 }
-/*局部样式*/
+/********局部样式********/
 /*index*/
+#myCar{
+    background-color: #ddd;
+}
 #myCar>div{
     width:70%;
     margin:0 auto;
@@ -14,25 +18,9 @@ body{
     height:500px;
 }
 /*detail*/
-#toggle{
-	width:250px;
-    height:160px;
-	padding:5px;
-	border:1px solid #ddd;
-}
-#toggle img{
-	width:100%;
-}
-#toggle img:not(:first-child){
-	display:none;
-}
-#toggle img:target{
-    display:block;
-}
 #toggle+div{
-	width:265px;
-	padding:5px;
-	border:1px solid #ddd;
+	width:290px;
+	padding:5px 0;
 }
 #toggle+div img{
 	width:150%;

@@ -2,22 +2,27 @@ var app=angular.module("car",["ng","ngRoute"]);
 app.config(function($routeProvider){
     $routeProvider
         .when("/index",{
-            templateUrl:"tpl/index.html"
+            templateUrl:"tpl/index.html",
+            controller:"indexCtrl"
         })
         .when("/list",{
-            templateUrl:"tpl/list.html"
+            templateUrl:"tpl/list.html",
+            controller:"listCtrl"
         })
-        .when("/detail",{
-            templateUrl:"tpl/detail.html"
+        .when("/detail/:id",{
+            templateUrl:"tpl/detail.html",
+            controller:"detailCtrl"
         })
         .when("/repair",{
-            templateUrl:"tpl/repair.html"
+            templateUrl:"tpl/repair.html",
+            controller:"repairCtrl"
         })
         .when("/contact",{
             templateUrl:"tpl/contact.html"
         })
         .when("/login",{
-            templateUrl:"tpl/login.html"
+            templateUrl:"tpl/login.html",
+            controller:"loginCtrl"
         })
         .when("/404",{
             templateUrl:"tpl/404.html"
@@ -29,23 +34,35 @@ app.controller("parentCtrl",["$scope","$location",function($scope,$location){
     $scope.jump=function(desjump){
         $location.path(desjump);
     };
-    //表单提交
-    $scope.handleSubmit=function(){
-        console.log($scope.user_name+":"+$scope.user_pwd);
-    };
-    $scope.indexSliderList=[
-        "2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg"
-    ];
+}]);
+//主页面
+app.controller("indexCtrl",["$scope",function($scope){
     $scope.indexList=[
         {img:"pic1.jpg",name:"车1"},{img:"pic2.jpg",name:"车2"},{img:"pic3.jpg",name:"车3"},{img:"pic4.jpg",name:"车4"},
         {img:"pic5.jpg",name:"车5"},{img:"pic6.jpg",name:"车6"},{img:"pic7.jpg",name:"车7"},{img:"pic8.jpg",name:"车8"}
     ];
+}]);
+//列表页
+app.controller("listCtrl",["$scope",function($scope){
     $scope.listList=[
         "8.jpg","2.jpg","3.jpg"
     ];
+}]);
+//维修页
+app.controller("repairCtrl",["$scope",function($scope){
     $scope.repairList=[
         "r_pic1.jpg","r_pic2.jpg","r_pic3.jpg","r_pic4.jpg","r_pic5.jpg","r_pic6.jpg","r_pic7.jpg","r_pic8.jpg"
     ];
-
-
+}]);
+//详情页
+app.controller("detailCtrl",["$scope","$routeParams",function($scope,$routeParams){
+    //index、list、repair传参给详情页面
+    $scope.msg=$routeParams.id;
+}]);
+//登录页
+app.controller("loginCtrl",["$scope",function($scope){
+    //表单提交
+    $scope.handleSubmit=function(){
+        console.log($scope.user_name+":"+$scope.user_pwd);
+    };
 }]);
