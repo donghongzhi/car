@@ -1,9 +1,9 @@
 var app=angular.module("car",["ng","ngRoute"]);
 app.config(function($routeProvider){
     $routeProvider
-        .when("/index",{
-            templateUrl:"tpl/index.html",
-            controller:"indexCtrl"
+        .when("/home",{
+            templateUrl:"tpl/home.html",
+            controller:"homeCtrl"
         })
         .when("/list",{
             templateUrl:"tpl/list.html",
@@ -27,7 +27,7 @@ app.config(function($routeProvider){
         .when("/404",{
             templateUrl:"tpl/404.html"
         })
-        .otherwise({redirectTo:"/index"});
+        .otherwise({redirectTo:"/home"});
 });
 app.controller("parentCtrl",["$scope","$location",function($scope,$location){
     // 页面跳转
@@ -36,14 +36,14 @@ app.controller("parentCtrl",["$scope","$location",function($scope,$location){
     };
 }]);
 //主页面
-app.controller("indexCtrl",["$scope",function($scope){
-    $scope.indexList=[
-        {img:"pic1.jpg",name:"车1"},{img:"pic2.jpg",name:"车2"},{img:"pic3.jpg",name:"车3"},{img:"pic4.jpg",name:"车4"},
-        {img:"pic5.jpg",name:"车5"},{img:"pic6.jpg",name:"车6"},{img:"pic7.jpg",name:"车7"},{img:"pic8.jpg",name:"车8"}
+app.controller("homeCtrl",["$scope",function($scope){
+    $scope.homeList=[
+        {img:"pic1.jpg",name:"奥迪A3"},{img:"pic2.jpg",name:"iulietta"},{img:"pic3.jpg",name:"林肯"},{img:"pic4.jpg",name:"Dart"},
+        {img:"pic5.jpg",name:"奔驰A级"},{img:"pic6.jpg",name:"奔驰B级"},{img:"pic7.jpg",name:"奔驰CLA级"},{img:"pic8.jpg",name:"奔驰CLA级<AMG></AMG>"}
     ];
 }]);
 //列表页
-app.controller("listCtrl",["$scope",function($scope){
+app.controller("listCtrl",["$scope", function($scope){
     $scope.listList=[
         "8.jpg","2.jpg","3.jpg"
     ];
@@ -56,7 +56,7 @@ app.controller("repairCtrl",["$scope",function($scope){
 }]);
 //详情页
 app.controller("detailCtrl",["$scope","$routeParams",function($scope,$routeParams){
-    //index、list、repair传参给详情页面
+    //home、list、repair传参给详情页面
     $scope.msg=$routeParams.id;
 }]);
 //登录页
@@ -66,3 +66,10 @@ app.controller("loginCtrl",["$scope",function($scope){
         console.log($scope.user_name+":"+$scope.user_pwd);
     };
 }]);
+
+// var nav=document.getElementById("nav");
+// nav.addEventListener("click",function(e){
+//     e.stopPropagation();
+//     e.target.className="active";
+  
+// });
